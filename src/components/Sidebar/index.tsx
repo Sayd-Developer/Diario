@@ -1,5 +1,9 @@
-import { Container } from "./style"
+import { Container, ContainerContent } from "./style"
 
 export default function Sidebar() {
-  return <Container>Sidebar</Container>
+  return (
+    <Container>
+      <ContainerContent>Sidebar</ContainerContent>
+    </Container>
+  )
 }
