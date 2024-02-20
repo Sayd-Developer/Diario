@@ -1,55 +1,85 @@
-import { Container, ContainerContent, ContainerLeft, ContainerRight, Header, Body, Footer} from "./style"
+import { ContainerContent, ContainerLeft, ContainerRight, Header, Body, Footer, ContainerForm, Button, Input, GroupInput } from "./style"
 
-// import * as Yup from 'yup';
-// import { useForm } from 'react-hook-form';
-// import { yupResolver } from '@hookform/resolvers/yup';
-// import FormProvider from 'src/components/hook-form/form-provider';
+import imgLogin from '../../assets/img/imgLogin.svg'
+import userLogin from "../../assets/img/userLogin.svg"
+import passwordLogin from '../../assets/img/passwordLogin.svg'
 
-import imgLogin from "../../assets/img/imgLogin.svg"
+import { useForm } from 'react-hook-form';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from 'zod';
+import { useNavigate } from "react-router-dom";
 
+const schemaForm = z.object({
+  login: z.object({
+    email: z.string().min(10, 'Por favor, informe seu email'),
+    password: z.string().min(6, 'Por favor, informe sua senha')
+  })
+})
 
-  // const NewModuleSchema = Yup.object().shape({
-  //   name: Yup.string().required('Título é obrigatório'),
-  //   description: Yup.string().required('Descrição é obrigatória'),
-  //   workload: Yup.number().required('Carga horária é obrigatória'),
-  //   courseId:Yup.mixed()
-  //   .oneOf(courselist.map((course) => course.value))
-  //   .required('Curso é obrigatório'),
-  // });
-  
-  // const methods = useForm({
-  //   resolver: yupResolver(NewModuleSchema),
-  //   defaultValues: {
-  //     name: '',
-  //     description: '',
-  //     workload: 0,
-  //     courseId: '',
-  //   },
-  // });
-
-  // const {
-  //   handleSubmit,
-  //   formState: { isSubmitting },
-  // } = methods;
-
+type FormProps = z.infer<typeof schemaForm>
 
 export default function Login() {
+
+  const { register, handleSubmit, formState: { errors } } = useForm<FormProps>({
+    criteriaMode: "all",
+    mode: "all",
+    resolver: zodResolver(schemaForm),
+    defaultValues: {
+      login: {
+        email: "",
+        password: ""
+      }
+    }
+  }
+  );
+
+  const handleFormSubmit = (data: FormProps) => {
+    console.log(data);
+  }
+
+  const navigate = useNavigate();
+
   return (
-    <Container>
-      {/* <FormProvider> */}
+    <>
+      <ContainerForm onSubmit={handleSubmit(handleFormSubmit)}>
         <ContainerLeft>
-    <ContainerContent>
-      <Header>
-            Login
-      </Header>
-      <Body></Body>
-      <Footer></Footer>
-    </ContainerContent>
+          <ContainerContent>
+            <Header>
+              <h1>Login</h1>
+              <h2>Desvende sua história, <br />
+                uma página por vez.</h2>
+            </Header>
+            <Body>
+              <GroupInput>
+                <img alt="" src={userLogin} width="19px" />
+                <Input {...register('login.email')} type="text" maxLength={9} />
+              </GroupInput>
+              {errors.login?.email?.message && (
+                <p>{errors.login?.email?.message}</p>
+              )}
+
+
+              <GroupInput>
+                <img src={passwordLogin} alt="" width="19px" />
+                <Input {...register('login.password')} type="text" maxLength={9} />
+              </GroupInput>
+              {errors.login?.password?.message && (
+                <p>{errors.login?.password?.message}</p>
+              )}
+
+              <h4>Esqueceu sua senha? Clique Aqui</h4>
+            </Body>
+            <Footer>
+              <Button type="submit">Enviar</Button>
+              <Button onClick={() => navigate("/")}>Cadastrar</Button>
+            </Footer>
+          </ContainerContent>
         </ContainerLeft>
+
         <ContainerRight>
           <img src={imgLogin} alt="" />
         </ContainerRight>
-      {/* </FormProvider> */}
-  </Container>
-)
+      </ContainerForm >
+    </>
+  )
 }
