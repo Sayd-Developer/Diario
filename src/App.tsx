@@ -1,11 +1,14 @@
-import Router from "./routes/Router"
+import NavigationRoutes from "./routes"
 import { GlobalStyles } from "./style/GlobalStyles"
+import { BrowserRouter } from "react-router-dom"
 
 function App() {
   return (
     <>
-      <Router />
-      <GlobalStyles />
+      <BrowserRouter>
+        <GlobalStyles />
+        <NavigationRoutes />
+      </BrowserRouter>
     </>
   )
 }
