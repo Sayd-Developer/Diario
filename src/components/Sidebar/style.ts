@@ -1,10 +1,11 @@
 import { styled } from "styled-components"
 
-export const Container = styled.div`
+export const Container = styled.div<{ isCollapsed: boolean }>`
 display: flex;
 flex-direction: column;
-background: #B3B3B3;
-
+background: ${props => props.theme.primary}; 
+/* width: ${({ isCollapsed }) => (isCollapsed ? '50px' : '200px')}; */
+/* transition: width 0.3s ease; */
 width: 18vw;
 height: 100vh;
 `

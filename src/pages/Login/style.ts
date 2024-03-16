@@ -13,7 +13,7 @@ align-items: center;
 
 width: 50vw;
 height: 100vh;
-background-color: #B3B3B3;
+background-color: ${props => props.theme.primary};
 
 `
 export const ContainerRight = styled.div`
