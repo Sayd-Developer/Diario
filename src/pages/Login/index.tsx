@@ -1,4 +1,4 @@
-import { ContainerContent, ContainerLeft, ContainerRight, Header, Body, Footer, ContainerForm, Button, Input, GroupInput } from "./style"
+import { ContainerContent, ContainerLeft, ContainerRight, Header, Body, Footer, ContainerForm, Button, GroupInput } from "./style"
 
 import imgLogin from '../../assets/img/imgLogin.svg'
 import userLogin from "../../assets/img/userLogin.svg"
@@ -9,10 +9,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from 'zod';
 import { useNavigate } from "react-router-dom";
 
+import { InputCustomizado } from "../../components/InputLogin/style";
+
 const schemaForm = z.object({
   login: z.object({
-    email: z.string().min(10, 'Por favor, informe seu email'),
-    password: z.string().min(6, 'Por favor, informe sua senha')
+    email: z.string().min(20, 'Por favor, informe seu email'),
+    password: z.string().min(20, 'Por favor, informe sua senha')
   })
 })
 
@@ -46,22 +48,21 @@ export default function Login() {
           <ContainerContent>
             <Header>
               <h1>Login</h1>
-              <h2>Desvende sua história, <br />
-                uma página por vez.</h2>
+              <h2>Desvende sua história,  uma<br />
+                página por vez.</h2>
             </Header>
             <Body>
               <GroupInput>
                 <img alt="" src={userLogin} width="19px" />
-                <Input {...register('login.email')} type="text" maxLength={9} />
+                <InputCustomizado {...register('login.email')} type="text" maxLength={20} />
               </GroupInput>
               {errors.login?.email?.message && (
                 <p>{errors.login?.email?.message}</p>
               )}
 
-
               <GroupInput>
                 <img src={passwordLogin} alt="" width="19px" />
-                <Input {...register('login.password')} type="text" maxLength={9} />
+                <InputCustomizado {...register('login.password')} type="text" maxLength={20} />
               </GroupInput>
               {errors.login?.password?.message && (
                 <p>{errors.login?.password?.message}</p>
