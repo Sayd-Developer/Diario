@@ -3,6 +3,6 @@ import { Container } from "./style"
 
 export default function Home() {
   return <Container>
-    fbdhuibfusb
+    Desvende sua história, uma página por vez.
   </Container>
 }
