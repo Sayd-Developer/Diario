@@ -1,43 +1,41 @@
-import { Container, ContainerContent, Pages, Header, Button } from "./style"
-
-import close from "../../assets/img/close.svg"
-import Register from "../../assets/img/registerHome.svg"
-import User from "../../assets/img/userHome.svg"
-import NewAnnotation from "../../assets/img/newAnnotationHome.svg"
-import { useState } from "react"
+import { Container, Pages, Header, Button } from "./style";
+import close from "../../assets/img/close.svg";
+import Register from "../../assets/img/book.svg";
+import User from "../../assets/img/userHome.svg";
+import NewAnnotation from "../../assets/img/newAnnotationHome.svg";
+import { useNavigate } from "react-router-dom";
+import { useSidebar } from "../../Context/hooks/useSidebar";
 
 export default function Sidebar() {
+  const { toggleSidebar, isCollapsed } = useSidebar();
 
-
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsCollapsed((prev) => !prev);
+  const handleCloseSidebar = () => {
+    toggleSidebar();
   };
+
+  const navigate = useNavigate();
 
   return (
     <Container isCollapsed={isCollapsed}>
-      <ContainerContent>
-        <Header>
-          <button onClick={toggleSidebar}>
-            <img src={close} alt="" />
-          </button>
-        </Header>
-        <Pages>
-          <Button>
-            <img src={User} alt="" height="25px" />
-            Início
-          </Button>
-          <Button>
-            <img src={NewAnnotation} alt="" height="25px" />
-            Nova Anotação
-          </Button>
-          <Button>
-            <img src={Register} alt=" " height="25px" />
-            Registro de Anotação
-          </Button>
-        </Pages>
-      </ContainerContent>
+      <Header>
+        <button onClick={handleCloseSidebar} style={{ background: "transparent", border: "none" }}>
+          <img src={close} alt="" />
+        </button>
+      </Header>
+      <Pages>
+        <Button onClick={() => navigate("/")}>
+          <img src={User} alt="" height="25px" />
+          <span>Início</span>
+        </Button>
+        <Button onClick={() => navigate("/newAnnotation")}>
+          <img src={NewAnnotation} alt="" height="25px" />
+          <span>Nova Anotação</span>
+        </Button>
+        <Button onClick={() => navigate("/salvo")} >
+          <img src={Register} alt=" " height="25px" />
+          <span>Registros</span>
+        </Button>
+      </Pages>
     </Container>
-  )
+  );
 }
