@@ -5,3 +5,8 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 40px;
 `
+export const ContainerContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 77vw;
+`
