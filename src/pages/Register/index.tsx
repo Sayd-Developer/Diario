@@ -1,5 +1,9 @@
-import { Container } from "./style"
+import { Container, ContainerContent } from "./style"
 
 export default function Register() {
-  return <Container>Register</Container>
+  return <Container>
+    <ContainerContent>
+      ibsdfias
+    </ContainerContent>
+  </Container>
 }
