@@ -5,13 +5,19 @@ export const ContainerForm = styled.form`
   flex-direction: row;
   width: 100vw;
   height: 100%;
+
+  @media screen and (max-width: 1290px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `
 export const ContainerLeft = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 50vw;
+  flex: 1;
   height: 100vh;
   background-color: ${props => props.theme.primary};
 `
@@ -19,30 +25,45 @@ export const ContainerRight = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vw;
+  flex: 1;
   height: 100vh;
+
+  @media screen and (max-width: 1290px) {
+    display: none;
+  }
 `
 
 export const ContainerContent = styled.div`
-  display: block;
+  display: flex;
   flex-direction: column;
-  height: 65%;
-  width: 65%;
+
+  @media screen and (max-width: 450px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 4%;
 
   h1 {
     font-size: 50px;
   }
   h2 {
-    font-size: 34px;
+    font-size: 27px;
     margin-bottom: 30px;
     margin-top: 30px;
+
+    @media screen and (max-width: 450px) {
+      font-size: 23px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 350px;
   }
 `
 export const GroupInput = styled.div`
@@ -50,14 +71,16 @@ export const GroupInput = styled.div`
   border: 2px solid #fff;
   border-radius: 15px;
   height: 65px;
-  width: 455px;
+  width: 410px;
 
   padding: 17px;
   margin-top: 10px;
+
+  @media screen and (max-width: 450px) {
+    width: 350px;
+  }
 `
 export const Body = styled.div`
-  margin-left: 4%;
-
   p {
     margin-top: 10px;
     color: red;
@@ -72,15 +95,31 @@ export const Footer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin-top: 10px;
+
+  @media screen and (max-width: 450px) {
+    width: 350px;
+  }
 `
 
 export const Button = styled.button`
   border: none;
   background: #fff;
   color: #131313;
-  width: 230px;
+  width: 180px;
   height: 50px;
   border-radius: 15px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 
   font-weight: 800;
+
+  &:hover {
+    background-color: #111;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 150px;
+  }
 `
