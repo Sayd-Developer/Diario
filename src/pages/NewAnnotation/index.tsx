@@ -7,7 +7,7 @@ export default function NewAnnotation() {
     <ContainerContent>
       <h1>Anotação:</h1>
       <InputRegister type="text" placeholder="Título da anotação" color="#131313" />
-      <InputRegister type="text" placeholder="Desenvolvimento da anotação" />
+      <InputRegister type="text" placeholder="Desenvolvimento da anotação" color="#131313" />
       <Button>Salvar</Button>
     </ContainerContent>
   </Container>

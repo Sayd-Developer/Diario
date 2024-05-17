@@ -1,7 +1,7 @@
 import { Container } from "./style"
 
 interface UserProps {
-    placeholder?: string | number;
+    placeholder?: string;
     color: string;
     maxLength?: number;
 }
