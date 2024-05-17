@@ -1,10 +1,15 @@
 import { Container } from "./style"
 
+interface UserProps {
+    placeholder?: string | number;
+    color: string;
+    maxLength?: number;
+}
 
-export default function User() {
+const User: React.FC<UserProps> = ({ placeholder, color, maxLength, }) => {
     return (
-        <Container>
-
-        </Container>
+        <Container placeholder={placeholder} color={color} maxLength={maxLength} />
     )
 }
+
+export default User
