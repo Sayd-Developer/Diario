@@ -1,9 +1,24 @@
-import { Container, ContainerContent } from "./style"
+import { ContainerForm, ContainerContent } from "./style"
 
 export default function Register() {
-  return <Container>
+  return <ContainerForm>
     <ContainerContent>
-      ibsdfias
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
     </ContainerContent>
-  </Container>
+    <ContainerContent>
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
+    </ContainerContent>
+    <ContainerContent>
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
+      <h1>sojadbias</h1>
+    </ContainerContent>
+  </ContainerForm>
 }
