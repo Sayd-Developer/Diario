@@ -1,30 +1,25 @@
 import { ContainerContent, ContainerLeft, ContainerRight, Header, Body, Footer, ContainerForm, Button, GroupInput } from "./style"
 
-import imgLogin from '../../assets/img/imgLogin.svg'
-import userLogin from "../../assets/img/userLogin.svg"
-import passwordLogin from '../../assets/img/passwordLogin.svg'
-
+import imgLogin from '../../assets/img/imgLogin.svg';
+import userLogin from "../../assets/img/userLogin.svg";
+import passwordLogin from '../../assets/img/passwordLogin.svg';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from 'zod';
 import { useNavigate } from "react-router-dom";
-
 import { InputCustomizado } from "../../components/InputLogin/style";
 
 const schemaForm = z.object({
   login: z.object({
-    email: z.string().min(20, 'Por favor, informe seu email'),
-    password: z.string().min(20, 'Por favor, informe sua senha')
+    email: z.string().min(6, 'Por favor, informe um email válido'),
+    password: z.string().min(6, 'Por favor, informe uma senha válida')
   })
-})
+});
 
-type FormProps = z.infer<typeof schemaForm>
+type FormProps = z.infer<typeof schemaForm>;
 
 export default function Login() {
-
   const { register, handleSubmit, formState: { errors } } = useForm<FormProps>({
-    criteriaMode: "all",
-    mode: "all",
     resolver: zodResolver(schemaForm),
     defaultValues: {
       login: {
@@ -32,12 +27,11 @@ export default function Login() {
         password: ""
       }
     }
-  }
-  );
+  });
 
   const handleFormSubmit = (data: FormProps) => {
     console.log(data);
-  }
+  };
 
   const navigate = useNavigate();
 
@@ -48,24 +42,23 @@ export default function Login() {
           <ContainerContent>
             <Header>
               <h1>Login</h1>
-              <h2>Desvende sua história,  uma<br />
-                página por vez.</h2>
+              <h2>Desvende sua história, uma <br /> página por vez.</h2>
             </Header>
             <Body>
               <GroupInput>
                 <img alt="" src={userLogin} width="19px" />
                 <InputCustomizado {...register('login.email')} type="text" maxLength={20} />
               </GroupInput>
-              {errors.login?.email?.message && (
-                <p>{errors.login?.email?.message}</p>
+              {errors.login?.email && (
+                <p>{errors.login.email.message}</p>
               )}
 
               <GroupInput>
                 <img src={passwordLogin} alt="" width="19px" />
-                <InputCustomizado {...register('login.password')} type="text" maxLength={20} />
+                <InputCustomizado {...register('login.password')} type="password" maxLength={20} />
               </GroupInput>
-              {errors.login?.password?.message && (
-                <p>{errors.login?.password?.message}</p>
+              {errors.login?.password && (
+                <p>{errors.login.password.message}</p>
               )}
 
               <h4>Esqueceu sua senha? Clique Aqui</h4>
@@ -80,7 +73,7 @@ export default function Login() {
         <ContainerRight>
           <img src={imgLogin} alt="" />
         </ContainerRight>
-      </ContainerForm >
+      </ContainerForm>
     </>
-  )
+  );
 }

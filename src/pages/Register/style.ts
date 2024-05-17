@@ -1,8 +1,17 @@
 import { styled } from "styled-components"
 
-export const Container = styled.div`
+export const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  width: 100vw;
+  padding: 20px;
 `
-export const ContainerContent = styled.div``
+export const ContainerContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  border: 1.6px solid black;
+  box-shadow: 1px 2px 2px red;
+`

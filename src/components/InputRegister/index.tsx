@@ -3,13 +3,13 @@ import { InputPersonalizado } from "./style"
 interface InputPersonalizadoProps {
     type: string;
     placeholder?: string;
-    color?: string;
-    maxLenght?: number;
+    color: string;
+    maxLength?: number;
 }
 
-const InputRegister: React.FC<InputPersonalizadoProps> = ({ type, placeholder, color, maxLenght }) => {
+const InputRegister: React.FC<InputPersonalizadoProps> = ({ type, placeholder, color, maxLength, }) => {
     return (
-        <InputPersonalizado type={type} placeholder={placeholder} color={color} maxLength={maxLenght} />
+        <InputPersonalizado type={type} placeholder={placeholder} color={color} maxLength={maxLength} />
     )
 }
 
