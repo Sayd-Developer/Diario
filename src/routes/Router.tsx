@@ -5,6 +5,7 @@ const Login = lazy(() => import("../pages/Login"))
 const NewAnnotation = lazy(() => import("../pages/NewAnnotation"))
 const Home = lazy(() => import("../pages/Home"))
 const Register = lazy(() => import("../pages/Register"))
+const RegisterLogin = lazy(() => import("../pages/RegisterLogin"))
 
 function Private(Component: React.FC) {
   return <Component />
@@ -12,6 +13,7 @@ function Private(Component: React.FC) {
 
 export const routes = [
   { children: [{ path: "/login", element: Private(Login) }] },
+  { children: [{ path: "/registerLogin", element: Private(RegisterLogin) }] },
   {
     element: <LayoutApp />,
     children: [
