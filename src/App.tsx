@@ -18,7 +18,8 @@ export default function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme === "light" ? ligthTheme : darkTheme}>
         <SidebarProvider>
-          <ThemeSwitcher toggleTheme={toggleTheme} />
+          <ThemeSwitcher toggleTheme={toggleTheme}  >
+          </ThemeSwitcher>
           <NavigationRoutes />
           <GlobalStyles />
         </SidebarProvider>
