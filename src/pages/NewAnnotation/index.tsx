@@ -1,14 +1,21 @@
-import { Container, ContainerContent, Button } from "./style"
+import { Container, ContainerContent, Button, SeparatorInput, SeparatorButton, Separator } from "./style"
 
-import InputRegister from "../../components/InputRegister"
+import InputTitleRegister from "../../components/InputTitleRegister"
+import InputAreaNewRegister from "../../components/InputAreaRegister"
 
 export default function NewAnnotation() {
   return <Container>
     <ContainerContent>
-      <h1>Anotação:</h1>
-      <InputRegister type="text" placeholder="Título da anotação" color="#131313" />
-      <InputRegister type="text" placeholder="Desenvolvimento da anotação" color="#131313" />
-      <Button>Salvar</Button>
+      <SeparatorInput>
+        <InputTitleRegister type="text" placeholder="Título da anotação" width={250} height={60} />
+        <Separator />
+        <InputAreaNewRegister placeholder="Faça sua anotação..." />
+      </SeparatorInput>
+
+      <SeparatorButton>
+        <Button>Salvar</Button>
+      </SeparatorButton>
+
     </ContainerContent>
-  </Container>
+  </Container >
 }
