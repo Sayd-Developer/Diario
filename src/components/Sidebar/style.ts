@@ -4,10 +4,13 @@ export const Container = styled.div<{ isCollapsed: boolean }>`
   display: flex;
   flex-direction: column;
   background: ${props => props.theme.primary};
-  width: ${props => (props.isCollapsed ? "17%" : "50px")};
+  width: ${props => (props.isCollapsed ? "25%" : "60px")};
   transform: ${props => (props.isCollapsed ? "true" : "scaleX(-1)")};
   transition: width 0.9s ease;
   height: 100vh;
+  span {
+    display: ${props => (props.isCollapsed ? "" : "none")};
+  }
 `
 
 export const Header = styled.header`
