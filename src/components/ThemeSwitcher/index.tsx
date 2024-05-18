@@ -1,10 +1,13 @@
-interface ThemeSwitcherProps {
-    toggleTheme: () => void;
-}
+import useTheme from '../../types/useTheme';
+import { Button } from './style'
 
-const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ toggleTheme }) => {
+
+function ThemeSwitcher() {
+
+    const { toggleTheme } = useTheme()
+
     return (
-        <button onClick={toggleTheme} >Toggle Theme</button>
+        <Button onClick={toggleTheme} type='button'>Mudar tema</Button>
     );
 };
 

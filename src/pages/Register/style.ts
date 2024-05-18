@@ -12,6 +12,6 @@ export const ContainerContent = styled.div`
   width: 100%;
   height: 200px;
   border-radius: 15px;
-  border: 1.6px solid black;
-  box-shadow: 1px 2px 2px red;
+  border: 2.5px solid black;
+  /* box-shadow: 1px 2px 2px red; */
 `
