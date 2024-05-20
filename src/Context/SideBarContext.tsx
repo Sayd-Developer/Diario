@@ -7,7 +7,6 @@ export interface SidebarContextType {
 
 export const SidebarContext = createContext<SidebarContextType | undefined>(undefined)
 
-// export const SidebarProvider: React.FC = ({ children })
 export const SidebarProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [isCollapsed, setIsCollapsed] = useState(false)
 

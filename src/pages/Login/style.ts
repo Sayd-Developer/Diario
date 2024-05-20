@@ -16,10 +16,11 @@ export const ContainerLeft = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   flex: 1;
   height: 100vh;
-  background-color: ${props => props.theme.primary};
+  background-color: ${props => props.theme.backgroundColor};
 `
 export const ContainerRight = styled.div`
   display: flex;
@@ -37,17 +38,33 @@ export const ContainerContent = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 450px) {
+  @media screen and (width: 450px) {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  h4 {
+    color: ${props => props.theme.textColor};
+  }
 `
+
+export const HeaderButtonImg = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 57%;
+
+  @media screen and (max-width: 450px) {
+    width: 47%;
+  }
+`
+
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  color: ${props => props.theme.textColor};
 
   h1 {
     font-size: 50px;
@@ -103,8 +120,8 @@ export const Footer = styled.div`
 
 export const Button = styled.button`
   border: none;
-  background: #fff;
-  color: #131313;
+  background: ${props => props.theme.buttonColor};
+  color: ${props => props.theme.buttonTextColor};
   width: 180px;
   height: 50px;
   border-radius: 15px;

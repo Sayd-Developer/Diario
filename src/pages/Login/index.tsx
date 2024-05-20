@@ -1,4 +1,4 @@
-import { ContainerContent, ContainerLeft, ContainerRight, Header, Body, Footer, ContainerForm, Button, GroupInput } from "./style"
+import { ContainerContent, ContainerLeft, ContainerRight, HeaderButtonImg, Header, Body, Footer, ContainerForm, Button, GroupInput } from "./style"
 
 import imgLogin from '../../assets/img/imgLogin.svg';
 import userLogin from "../../assets/img/userLogin.svg";
@@ -8,8 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from 'zod';
 import { useNavigate } from "react-router-dom";
 import { InputCustomizado } from "../../components/InputLogin/style";
-// import useTheme from "../../types/useTheme"
-// import ThemeSwitcher from "../../components/ThemeSwitcher";
+import useTheme from "../../Context/hooks/useTheme"
+import ThemeSwitcher from "../../components/ThemeSwitcher";
 
 const schemaForm = z.object({
   login: z.object({
@@ -21,7 +21,7 @@ const schemaForm = z.object({
 type FormProps = z.infer<typeof schemaForm>;
 
 export default function Login() {
-  // const { theme, toggleTheme } = useTheme()
+  const { toggleTheme } = useTheme()
 
   const navigate = useNavigate();
 
@@ -44,8 +44,10 @@ export default function Login() {
     <>
       <ContainerForm onSubmit={handleSubmit(handleFormSubmit)}>
         <ContainerLeft>
+          <HeaderButtonImg>
+            <ThemeSwitcher onClick={toggleTheme} />
+          </HeaderButtonImg>
           <ContainerContent>
-            {/* <ThemeSwitcher toggleTheme={toggleTheme} /> */}
             <Header>
               <h1>Login</h1>
               <h2>Desvende sua história, uma <br /> página por vez.</h2>
