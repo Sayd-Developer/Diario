@@ -1,13 +1,16 @@
-import useTheme from '../../types/useTheme';
 import { Button } from './style'
 
+import ThemeSwicher from "../../assets/icon/ThemeSwitcher.svg"
 
-function ThemeSwitcher() {
+interface ThemeSwitcherProps {
+    onClick: () => void;
+}
 
-    const { toggleTheme } = useTheme()
-
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ onClick }) => {
     return (
-        <Button onClick={toggleTheme} type='button'>Mudar tema</Button>
+        <Button onClick={onClick}>
+            <img src={ThemeSwicher} width={20} />
+        </Button>
     );
 };
 
