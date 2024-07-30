@@ -6,4 +6,5 @@ export const InputCustomizado = styled.input`
   width: 100%;
   outline: none;
   background-color: transparent;
+  color: ${props => props.theme.inputTextColor};
 `

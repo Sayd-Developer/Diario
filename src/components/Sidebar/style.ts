@@ -3,7 +3,7 @@ import { styled } from "styled-components"
 export const Container = styled.div<{ isCollapsed: boolean }>`
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.primary};
+  background: ${props => props.theme.backgroundColor};
   width: ${props => (props.isCollapsed ? "25%" : "60px")};
   transform: ${props => (props.isCollapsed ? "true" : "scaleX(-1)")};
   transition: width 0.9s ease;

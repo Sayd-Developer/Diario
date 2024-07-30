@@ -28,7 +28,7 @@ export default function Sidebar() {
           <span>Início</span>
         </Button>
         <Button onClick={() => navigate("/newAnnotation")}>
-          <img src={NewAnnotation} alt="" height="25px" />
+          <img src={NewAnnotation} alt="" height="25px" style={{ marginRight: "0px" }} />
           <span>Registrar</span>
         </Button>
         <Button onClick={() => navigate("/salvo")} >

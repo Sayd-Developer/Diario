@@ -13,7 +13,7 @@ export const ContainerContent = styled.div`
 `
 export const Button = styled.button`
   border: none;
-  background: #131313;
+  background: ${props => props.theme.backgroundText};
   color: #fff;
   width: 230px;
   height: 50px;

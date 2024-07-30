@@ -1,11 +1,17 @@
 import LayoutApp from "../layout/LayoutHome"
-import { lazy } from "react"
+// import { lazy } from "react"
 
-const Login = lazy(() => import("../pages/Login"))
-const NewAnnotation = lazy(() => import("../pages/NewAnnotation"))
-const Home = lazy(() => import("../pages/Home"))
-const Register = lazy(() => import("../pages/Register"))
-const RegisterLogin = lazy(() => import("../pages/RegisterLogin"))
+// const Login = lazy(() => import("../pages/Login"))
+// const NewAnnotation = lazy(() => import("../pages/NewAnnotation"))
+// const Home = lazy(() => import("../pages/Home"))
+// const Register = lazy(() => import("../pages/Register"))
+// const RegisterLogin = lazy(() => import("../pages/RegisterLogin"))
+
+import Login from "../pages/Login"
+import NewAnnotation from "../pages/NewAnnotation"
+import Home from "../pages/Home"
+import Register from "../pages/Register"
+import RegisterLogin from "../pages/RegisterLogin"
 
 function Private(Component: React.FC) {
   return <Component />

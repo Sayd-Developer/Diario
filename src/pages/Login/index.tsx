@@ -4,7 +4,7 @@ import imgLogin from '../../assets/img/imgLogin.svg';
 import userLogin from "../../assets/img/userLogin.svg";
 import passwordLogin from '../../assets/img/passwordLogin.svg';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from "@hookform/resolvers/zod";
+// import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from 'zod';
 import { useNavigate } from "react-router-dom";
 import { InputCustomizado } from "../../components/InputLogin/style";
@@ -26,7 +26,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormProps>({
-    resolver: zodResolver(schemaForm),
+    // resolver: zodResolver(schemaForm),
     defaultValues: {
       login: {
         email: "",
