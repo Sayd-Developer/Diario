@@ -7,9 +7,9 @@ export default function NewAnnotation() {
   return <Container>
     <ContainerContent>
       <SeparatorInput>
-        <InputTitleRegister type="text" placeholder="Título da anotação" width={250} height={60} />
+        <InputTitleRegister type="text" placeholder="Título" width={250} height={60} />
         <Separator />
-        <InputAreaNewRegister placeholder="Faça sua anotação..." />
+        <InputAreaNewRegister placeholder="Nova Anotação..." />
       </SeparatorInput>
 
       <SeparatorButton>

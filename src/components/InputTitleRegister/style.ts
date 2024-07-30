@@ -1,10 +1,16 @@
 import styled from "styled-components"
 
 export const InputPersonalizado = styled.input`
-  background: #131313;
+  background: ${props => props.theme.backgroundText};
   border-radius: 5px;
-  color: #fff;
+  color: ${props => props.theme.inputTextColor};
   width: ${props => props.width}px;
   height: ${props => props.height}px;
   padding: 10px;
+  border: none;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 `

@@ -104,7 +104,8 @@ export const Body = styled.div`
   }
 
   h4 {
-    font-size: 11px;
+    margin-top: 5px;
+    font-size: 9px;
   }
 `
 export const Footer = styled.div`

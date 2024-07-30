@@ -2,10 +2,16 @@ import styled from "styled-components"
 
 export const InputAreaPersonalizado = styled.textarea`
   box-sizing: border-box;
-  background: #131313;
+  background: ${props => props.theme.backgroundText};
+  color: ${props => props.theme.inputTextColor};
   border-radius: 5px;
-  color: #fff;
   resize: none;
   height: 450px;
   padding: 10px;
+  border: none;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 `

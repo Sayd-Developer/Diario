@@ -1,9 +1,9 @@
-import { ContainerForm, ContainerContent } from "./style"
+import { ContainerForm } from "./style"
+
+import CustomRegister from "../../components/Register"
 
 export default function Register() {
   return <ContainerForm>
-    <ContainerContent>
-      isbdibabsvdib
-    </ContainerContent>
+    <CustomRegister />
   </ContainerForm>
 }
